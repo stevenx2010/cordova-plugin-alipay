@@ -1,6 +1,6 @@
 # cordova-plugin-alipay
 ### 前言：
-本支付宝cordova来自于:
+本支付宝cordova插件来自于:
 https://github.com/jing-zhou/cordova-plugin-alipay
 （在此感谢原作者），对该插件在iOS下的BUG进行了修改，并增加插件安装过程中的自动设置。具体修改下面问题：
 1. XCODE编译时无法找到Alipay.h文件
