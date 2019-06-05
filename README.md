@@ -1,6 +1,13 @@
-# cordova-plugin-gubnoi-alipay（更新至2018-06-01）
+# cordova-plugin-alipay
 ### 前言：
-支付宝的cordova插件其实在github上已经有很多了，但是都已经是以前的版本了。在2016年11月的时候支付宝进行了一次更新，支付宝的SDK升级到2.0版本。以前在app中使用支付宝进行支付叫做移动支付，11月之后更名为APP支付。
+本支付宝cordova来自于:
+https://github.com/jing-zhou/cordova-plugin-alipay
+（在此感谢原作者），对该插件在iOS下的BUG进行了修改，并增加插件安装过程中的自动设置。具体修改下面问题：
+1. XCODE编译时无法找到Alipay.h文件
+2. 自动添加Alipay到白名单(LSApplicationQueriesSchemes)
+3. 解决支付完成无法返回原app问题
+4. XCODE编译出错的其它问题
+
 ###### 本插件仅支持《APP支付》，不支持移动支付
 ***
 ### 功能说明
@@ -16,9 +23,8 @@
 ***
 ### 安装
 ###### 在线安装
-    cordova plugin add cordova-plugin-gubnoi-alipay --variable APP_ID=[your AppId]
 
-    cordova plugin add https://github.com/jing-zhou/cordova-plugin-alipay --variable APP_ID=[your AppId]
+    cordova plugin add https://github.com/stevenx2010/cordova-plugin-alipay --variable APP_ID=[your AppId]
 
 ###### 本地安装
 下载插件到本地
@@ -48,10 +54,3 @@
                  */
                 
                 
-#### TIPS
-##### 1. iOS上支付成功之后无法回调
-xcode的URL Types上alipay的URL Schemes正确格式应为ali2xxxxxxxxxxxxxxx。2开头的这串数字是你的APP_ID，英文字母与数字之间没有任何符号！！！
-
-##### 2. 沙箱环境
-在我个人的开发过程中确实是没有使用到沙箱环境，都是直接真实支付1分钱来做测试。
-如要使用沙箱环境，请自行参考官方文档https://docs.open.alipay.com/200/105311/

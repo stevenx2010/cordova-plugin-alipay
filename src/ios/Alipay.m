@@ -16,7 +16,7 @@
     NSString* orderString = [command.arguments objectAtIndex:0];
 
     if (!orderString) {
-        [self.commandDelegate sendPluginResult:[CDVPluginResult initWithStatus:CDVCommandStatus_ERROR message:orderString] 
+        [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:orderString] 
             callbackId:self.callbackId];
     }
 
